@@ -23,13 +23,11 @@ class OTPServiceProvider extends ServiceProvider
             if (! $this->migrationFileExists($migrationFileName)) {
                 $this->publishes([
                     __DIR__ . "/../database/migrations/{$migrationFileName}.stub" => database_path('migrations/' . date('Y_m_d_His', time()) . '_' . $migrationFileName),
-                ], 'otp-migrations');
+                ], 'migrations');
             }
         }
 
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'otp');
-
-        Blade::component('otp::components.pincode', 'otp-pincode');
     }
 
     public function register()

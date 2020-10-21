@@ -13,6 +13,10 @@ class SendVerifyIdentityEmailAction
     {
         $verificationCode = OTP::generateCodeForUrl($url);
 
-        Mail::to($email)->queue(new VerifyIdentityEmail($verificationCode));
+        if (config('otp.use_queue') === true) {
+            Mail::to($email)->queue(new VerifyIdentityEmail($verificationCode));
+        } else {
+            Mail::to($email)->send(new VerifyIdentityEmail($verificationCode));
+        }
     }
 }

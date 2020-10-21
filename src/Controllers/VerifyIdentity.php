@@ -18,6 +18,6 @@ class VerifyIdentity
             (new SendVerifyIdentityEmailAction)->handle($email, $url);
         }
 
-        return view('verify-identity');
+        return view('otp::verify-identity');
     }
 }

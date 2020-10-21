@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Verify Identity</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
     <style>
         input::-webkit-outer-spin-button,
@@ -22,13 +23,15 @@
         <div class="overflow-hidden transform transition-all sm:max-w-3xl sm:w-full sm:p-16">
             <div>
                 <div class="text-center sm:mt-5">
-                    <h3 class="text-3xl leading-10 font-medium text-gray-500">
+                    <h1 class="text-3xl leading-10 font-medium text-gray-900">
                         Verify your identify
-                    </h3>
+                    </h1>
 
-                    <x-otp-pincode></x-otp-pincode>
+                    <div class="mt-6">
+                        <x-otp::pincode></x-otp::pincode>
+                    </div>
 
-                    @if (session('errors'))
+                @if (session('errors'))
                         <div class="mt-6">
                             <div class="flex justify-center">
                                 <div class="flex-shrink-0">
@@ -44,7 +47,7 @@
                             </div>
                         </div>
                     @endif
-                    <p class="mt-10 text-lg text-gray-200">An email with a verification code has been sent you.<br>Enter the code to continue.</p>
+                    <p class="mt-10 text-lg text-gray-700">An email with a verification code has been sent you.<br>Enter the code to continue.</p>
                     <a class="mt-6 block text-blue-500 cursor-pointer underline" href="{{ route('viezel.otp.verify_identity.resend') }}">Resend verification code</a>
                 </div>
             </div>

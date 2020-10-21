@@ -21,9 +21,13 @@ php artisan migrate
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="Viezel\OTP\OTPServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Viezel\OTP\OTPServiceProvider" --tag="otp-config"
 ```
 
+You can publish the views with:
+```bash
+php artisan vendor:publish --provider="Viezel\OTP\OTPServiceProvider" --tag="otp-views"
+```
 
 ## Usage
 
@@ -47,10 +51,12 @@ Route::get('some-protected-route', Viezel\OTP\Controllers\VerifyIdentity::class)
 Route::get('verify/resend', Viezel\OTP\Controllers\ResendVerifyIdentity::class)->name('viezel.otp.verify_identity.resend');
 ```
 
-3. Optional: You can build up your own verification view. The package provides a blade component to reuse. Its based on Alpine.js and Tailwind CSS.  
+3. Optional: You can build up your own verification view. Just publish the views and change what you need. 
+
+The package provides a blade component to reuse. Its based on Alpine.js and Tailwind CSS.  
 
 ```html
-<x-otp-pincode></x-otp-pincode>
+<x-otp::pincode></x-otp::pincode>
 ```
 
 ## Testing

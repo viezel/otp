@@ -23,6 +23,6 @@ class VerifyIdentityEmail extends Mailable
     {
         return $this
             ->subject('Verify your identity')
-            ->markdown('emails.verify', ['code' => $this->code]);
+            ->markdown('otp::emails.verify', ['code' => $this->code]);
     }
 }
