@@ -3,7 +3,6 @@ declare(strict_types=1);
 
 namespace Viezel\OTP;
 
-use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class OTPServiceProvider extends ServiceProvider
