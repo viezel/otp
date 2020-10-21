@@ -2,7 +2,6 @@
 
 namespace Viezel\OTP\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
 use Viezel\OTP\OTPServiceProvider;
 

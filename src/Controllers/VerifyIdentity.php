@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace Viezel\OTP\Controllers;
 
 use Illuminate\Http\Request;
-use Viezel\OTP\OTP;
 use Viezel\OTP\Actions\SendVerifyIdentityEmailAction;
+use Viezel\OTP\OTP;
 
 class VerifyIdentity
 {
