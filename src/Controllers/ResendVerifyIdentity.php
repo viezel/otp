@@ -9,7 +9,7 @@ class ResendVerifyIdentity
 {
     public function __invoke()
     {
-        $url = route('viezel.otp.verify_identity');
+        $url = session('otp_url');
         $email = auth()->user()->email;
         (new SendVerifyIdentityEmailAction)->handle($email, $url);
 

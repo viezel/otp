@@ -22,6 +22,7 @@
     <form id="pin_form" method="POST" action="{{ route('viezel.otp.verify_identity') }}">
         @csrf
         <input id="code" type="hidden" name="code">
+        <input id="url" type="hidden" name="url" value="{{ session('otp_url') }}">
     </form>
     <script>
         function validatePinCode(event, next) {

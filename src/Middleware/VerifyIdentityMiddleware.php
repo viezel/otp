@@ -10,10 +10,8 @@ class VerifyIdentityMiddleware
 {
     public function handle($request, Closure $next)
     {
-        $result = OTP::validate(
-            $request->getUri(),
-            (int)$request->input('code')
-        );
+        $url = $request->input('url');
+        $result = OTP::validate($url, (int)$request->input('code'));
 
         if (! $result) {
             return back()
@@ -21,6 +19,8 @@ class VerifyIdentityMiddleware
                 ->withErrors(['code', 'The verification code is not valid']);
         }
 
-        return $next($request);
+        OTP::setVerified($url);
+
+        return redirect($url);
     }
 }

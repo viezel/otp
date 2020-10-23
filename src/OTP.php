@@ -8,6 +8,18 @@ use Viezel\OTP\Models\OneTimePassword;
 
 class OTP
 {
+    public static function shouldVerify(string $url): bool
+    {
+        $verifiedAt = time() - request()->session()->get('otp.email_verified_at_'. $url, 0);
+
+        return $verifiedAt > config('otp.validation_expires_after_minutes');
+    }
+
+    public static function setVerified(string $url): void
+    {
+        request()->session()->put('otp.email_verified_at_'. $url, time());
+    }
+
     public static function validate(string $url, int $code): bool
     {
         return OneTimePassword::query()
