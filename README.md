@@ -4,6 +4,9 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/viezel/otp/run-tests?label=tests)](https://github.com/viezel/otp/actions?query=workflow%3Arun-tests+branch%3Amaster)
 
 This package is sending out a 6 digit verification code per email, when a user visits a route in your Laravel app. 
+By default, the user identity verification will be valid for 30 minutes. 
+
+![Verify](docs/component.png?raw=true "Verify")
 
 ## Installation
 
