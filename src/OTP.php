@@ -8,6 +8,13 @@ use Viezel\OTP\Models\OneTimePassword;
 
 class OTP
 {
+    /**
+     * Indicates if routes will be registered.
+     *
+     * @var bool
+     */
+    public static $registersRoutes = true;
+
     public static function shouldVerify(string $url): bool
     {
         $verifiedAt = time() - request()->session()->get('otp.email_verified_at_'. $url, 0);

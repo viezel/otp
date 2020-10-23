@@ -15,4 +15,14 @@ return [
      * Should be use the queue to sent out the verification email
      */
     'use_queue' => false,
+
+    /*
+     * Route Prefix
+     */
+    'route_prefix' => '',
+
+    /*
+     * Route Middleware
+     */
+    'route_middleware' => ['auth'],
 ];
