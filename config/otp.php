@@ -24,5 +24,5 @@ return [
     /*
      * Route Middleware
      */
-    'route_middleware' => ['auth'],
+    'route_middleware' => [],
 ];
