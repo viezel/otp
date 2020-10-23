@@ -1,7 +1,7 @@
 # One Time Password for Laravel
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/viezel/otp.svg?style=flat-square)](https://packagist.org/packages/viezel/otp)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/viezel/otp/run-tests?label=tests)](https://github.com/viezel/otp/actions?query=workflow%3Arun-tests+branch%3Amaster)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/viezel/otp/Tests?label=tests)](https://github.com/viezel/otp/actions?query=workflow%3Arun-tests+branch%3Amaster)
 
 This package is sending out a 6 digit verification code per email, when a user visits a route in your Laravel app. 
 By default, the user identity verification will be valid for 30 minutes. 
