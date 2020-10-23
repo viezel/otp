@@ -28,7 +28,7 @@
                     </h1>
 
                     <div class="mt-6">
-                        <x-otp::pincode></x-otp::pincode>
+                        <x-otp::pincode url="{{ $url }}"></x-otp::pincode>
                     </div>
 
                 @if (session('errors'))

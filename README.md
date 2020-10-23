@@ -67,7 +67,7 @@ You can build up your own verification view. Just publish the views and change w
 The package provides a blade component to reuse. Its based on Alpine.js and Tailwind CSS.  
 
 ```html
-<x-otp::pincode></x-otp::pincode>
+<x-otp::pincode url="{{ $url }}"></x-otp::pincode>
 ```
 
 ## Testing

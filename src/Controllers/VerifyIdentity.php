@@ -7,6 +7,8 @@ class VerifyIdentity
 {
     public function __invoke()
     {
-        return view('otp::verify-identity');
+        return view('otp::verify-identity', [
+            'url' => session()->get('otp_url'),
+        ]);
     }
 }
